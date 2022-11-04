@@ -38,14 +38,16 @@ Feature: Creating/deleting any note
     And user clicks on the ... dots on the right side of the recently created note select details
     Then user can can see the number of letters and words that the note includes
 
-  @ETSKY-881
+  @ETSKY-881 @wip
   Scenario: User can create a new category by passing a new category name from inside the notes details
+    When user clicks on the note module
     When user sees under the recently added note Category box
     And user writes "Personal" into it
     And user clicks on the arrow to set the category
     Then on the left side of the page, under All notes folder will appear Personal folder
 
-  @ETSKY-882
+  @ETSKY-882 @wip
   Scenario: User can delete any note
+    When user clicks on the note module
     When user clicks on ... dots near to the note
     Then user selects Delete button

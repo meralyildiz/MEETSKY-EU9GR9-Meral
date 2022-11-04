@@ -38,7 +38,7 @@ public class NotePage {
     @FindBy(xpath = "//button[@class=\"primary\"]")
     public WebElement chooseButton;
 
-    @FindBy(xpath ="(//button[contains(@aria-controls,'menu-')])[3]")
+    @FindBy(xpath ="(//button[contains(@aria-controls,'menu-')])[4]")
     public WebElement threeDots;
 
     @FindBy(xpath = "//span[.=\"Add to favorites\"]")
@@ -64,7 +64,8 @@ public class NotePage {
     @FindBy(xpath = "//p[@class='app-sidebar-header__subtitle']")
     public WebElement numbersOfLetters;
 
-    @FindBy(id ="category")
+    @FindBy(xpath = "//input[@id=\"category\"]")
+            //div[@class='multiselect__tags']")
     public WebElement categoryButton;
 
     @FindBy(xpath = "//input[@class=\"icon-confirm loading\"]")
@@ -76,8 +77,8 @@ public class NotePage {
     @FindBy(xpath = "//span[@title=\"Personal\"]")
     public WebElement personalFolder;
 
-    @FindBy(xpath = "//p[.='Remove from favorites']")
-    public WebElement removeFromFavorites;
+    @FindBy(xpath ="//span[.='Delete note']")
+    public WebElement deleteNoteButton;
 
 
 

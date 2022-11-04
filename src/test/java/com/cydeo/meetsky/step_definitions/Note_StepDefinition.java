@@ -95,9 +95,9 @@ public class Note_StepDefinition {
     @When("user clicks on the ... dots on the right side of the recently created note select details")
     public void user_clicks_on_the_dots_on_the_right_side_of_the_recently_created_note_select_details() {
         BrowserUtils.sleep(2);
-        notePage.threeDots2.click();
+        BrowserUtils.clickWithJS(notePage.threeDots2);
         BrowserUtils.sleep(2);
-        notePage.detailsButton.click();
+        BrowserUtils.clickWithJS(notePage.detailsButton);
     }
     @Then("user can can see the number of letters and words that the note includes")
     public void user_can_can_see_the_number_of_letters_and_words_that_the_note_includes() {
@@ -108,23 +108,28 @@ public class Note_StepDefinition {
 
     @When("user sees under the recently added note Category box")
     public void user_sees_under_the_recently_added_note_category_box() {
-        BrowserUtils.sleep(2);
-        notePage.categoryButton.click();
+        BrowserUtils.sleep(5);
+        BrowserUtils.clickWithJS(notePage.threeDots2);
+        BrowserUtils.sleep(5);
+        BrowserUtils.clickWithJS(notePage.detailsButton);
+        BrowserUtils.sleep(5);
+        BrowserUtils.clickWithJS(notePage.categoryButton);
     }
     @When("user writes {string} into it")
     public void user_writes_into_it(String string) {
-        BrowserUtils.sleep(2);
+        BrowserUtils.sleep(5);
         notePage.categoryButton.sendKeys(string);
     }
     @When("user clicks on the arrow to set the category")
     public void user_clicks_on_the_arrow_to_set_the_category() {
+        BrowserUtils.sleep(5);
         notePage.arrowToSet.click();
 
     }
     @Then("on the left side of the page, under All notes folder will appear Personal folder")
     public void on_the_left_side_of_the_page_under_all_notes_folder_will_appear_personal_folder() {
         BrowserUtils.sleep(2);
-        notePage.categoryButton.click();
+        BrowserUtils.clickWithJS(notePage.categoriesFolder);
 
         BrowserUtils.sleep(2);
         notePage.personalFolder.isDisplayed();
@@ -132,12 +137,14 @@ public class Note_StepDefinition {
 
     @When("user clicks on ... dots near to the note")
     public void user_clicks_on_dots_near_to_the_note() {
+        BrowserUtils.sleep(2);
         BrowserUtils.clickWithJS(notePage.threeDots);
 
     }
     @Then("user selects Delete button")
     public void user_selects_delete_button() {
-        BrowserUtils.clickWithJS(notePage.removeFromFavorites);
+        BrowserUtils.sleep(2);
+        BrowserUtils.clickWithJS(notePage.deleteNoteButton);
 
     }
 
