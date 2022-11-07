@@ -9,8 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
     @Before
-    public void setupMetod(){
-
+    public void setupMethod() {
         Driver.getDriver().get("https://qa.meetsky.net/index.php/login");
 
     }
@@ -25,4 +24,7 @@ public class Hooks {
         Driver.closeDriver();
 
     }
-}
+
+    }
+
+

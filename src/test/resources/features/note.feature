@@ -7,7 +7,7 @@ Feature: Creating/deleting any note
   Background: : Login as user
     Given user is already logged in
 
-  @ETSKY-877
+  @ETSKY-877 @wip
   Scenario: user can create a new note
     When user clicks on the note module
     And user clicks on New note

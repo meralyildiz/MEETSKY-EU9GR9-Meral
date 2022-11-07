@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class NotePage {
-    public NotePage(){
+    public NotePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 

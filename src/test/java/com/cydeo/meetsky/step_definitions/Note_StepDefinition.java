@@ -12,10 +12,14 @@ public class Note_StepDefinition {
     LoginPage loginPage = new LoginPage();
     NotePage notePage = new NotePage();
 
+    public Note_StepDefinition() {
+    }
+
     @Given("user is already logged in")
     public void user_is_already_logged_in() {
         loginPage.loginWithConfig();
     }
+
     @When("user clicks on the note module")
     public void user_clicks_on_the_note_module() {
         BrowserUtils.sleep(10);
@@ -34,7 +38,7 @@ public class Note_StepDefinition {
         notePage.pageToWrite.sendKeys("Hello world!");
     }
     @Then("verify that the created note and it's title are matching")
-    public void verify_that_the_created_note_and_it_s_title_are_matching() {
+    public void verify_that_the_created_note_and_it_s_title_are_matching() throws InterruptedException {
         BrowserUtils.sleep(2);
         Driver.getDriver().getTitle().equals("Hello world!");
     }

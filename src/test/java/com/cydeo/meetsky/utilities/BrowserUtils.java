@@ -51,7 +51,7 @@ public class BrowserUtils {
      * This method will verify if the current URL contains expected value
      * @param expectedInURL
      */
-    public static void verifyTitleContains(String expectedInURL){
+    public static void verifyTitleContains(String expectedInURL) {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInURL));
     }
 
@@ -140,7 +140,7 @@ public class BrowserUtils {
      * @param locator
      * @return list of strings
      */
-    public static List<String> getElementsText(By locator) {
+    public static List<String> getElementsText(By locator){
 
         List<WebElement> elems = Driver.getDriver().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
@@ -183,7 +183,7 @@ public class BrowserUtils {
      * @param timeout
      * @return
      */
-    public static WebElement waitForVisibility(By locator, int timeout) {
+    public static WebElement waitForVisibility(By locator, int timeout){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
@@ -327,7 +327,7 @@ public class BrowserUtils {
      *
      * @param element
      */
-    public static void scrollToElement(WebElement element) {
+    public static void scrollToElement(WebElement element)  {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
@@ -347,7 +347,7 @@ public class BrowserUtils {
      * @param attributeName
      * @param attributeValue
      */
-    public static void setAttribute(WebElement element, String attributeName, String attributeValue) {
+    public static void setAttribute(WebElement element, String attributeName, String attributeValue)  {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", element, attributeName, attributeValue);
     }
 
@@ -412,7 +412,7 @@ public class BrowserUtils {
      *
      * @param command
      */
-    public static void executeJScommand(String command) {
+    public static void executeJScommand(String command)  {
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript(command);
 
